@@ -52,6 +52,6 @@ adata.obs["fov"] = adata.obs["brain_section_label"].astype("category")
 adata.obsm["spatial"] = np.array(adata.obs[["x", "y"]])
 
 print(f"Writing processed anndata object to '{out_path}/processed/'")
-adata.write(f"{path}processed/yao_2023_merfish_brain.h5ad")
+adata.write(f"{path}processed/Zhuang_2023_merfish_brain.h5ad")
 
 print("Done. All files processed.")
