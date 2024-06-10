@@ -13,6 +13,47 @@ This repository contains experiments with performing spatial ccc. Our current ai
 
 ## Input format
 
+```
+AnnData object
+ obs: 'celltype'
+ obsm: 'spatial'
+ layers: 'counts'
+```
+
+How to read in Python:
+
+```python
+import anndata as ad
+
+adata = ad.read_h5ad('path/to/file.h5ad')
+
+# Access celltype
+adata.obs['celltype']
+
+# Access spatial coordinates
+adata.obsm['spatial']
+
+# Access counts
+adata.layers['counts']
+```
+
+How to read in R:
+
+```R
+library(anndata)
+
+adata <- read_h5ad('path/to/file.h5ad')
+
+# Access celltype
+adata$obs[["celltype"]]
+
+# Access spatial coordinates
+adata$obsm[["spatial"]]
+
+# Access counts
+adata$layers[["counts"]]
+```
+
 ## Output format
 
 ## Implement a selection of spatial CCC methods
@@ -20,3 +61,4 @@ This repository contains experiments with performing spatial ccc. Our current ai
 ## Run all methods on all datasets
 
 ## Compare outputs
+
