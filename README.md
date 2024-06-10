@@ -13,6 +13,8 @@ This repository contains experiments with performing spatial ccc. Our current ai
 
 ## Input format
 
+Related issue: [#2](https://github.com/saeyslab/spatial_ccc_experiments/issues/2)
+
 ```
 AnnData object
  obs: 'celltype'
@@ -56,9 +58,30 @@ adata$layers[["counts"]]
 
 ## Output format
 
+Related issue: [#1](https://github.com/saeyslab/spatial_ccc_experiments/issues/1)
+
+Spatial CCC methods typically output one of three formats.
+
+### Per-spot prediction scores
+
+Examples: SpatialDM, LIANA+, NICHES
+
+### Per slide
+
+That is, one summary of interactions for the whole slide / sample
+
+Examples: COMMOT / MISTy / LIANA+
+
+### Per source-target
+
+That is, a summary for the whole slide but with respect to the cell type annotations
+
+Examples: Giotto / CellChatv2
+
 ## Implement a selection of spatial CCC methods
 
 ## Run all methods on all datasets
 
 ## Compare outputs
 
+Either visually or with a metric
