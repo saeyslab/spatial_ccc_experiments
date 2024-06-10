@@ -1,0 +1,24 @@
+type: file
+info:
+  summary: "The input data file."
+  slots:
+    layers: 
+      - type: integer
+        name: counts
+        description: Raw counts.
+        required: true
+    obs:
+      - type: string
+        name: celltype
+        description: Cell type labels.
+        required: true
+    obsm:
+      - type: double
+        name: spatial
+        description: Spatial coordinates.
+        required: true
+    uns:
+      - type: string
+        name: dataset_id
+        description: "A unique identifier for the dataset"
+        required: true
