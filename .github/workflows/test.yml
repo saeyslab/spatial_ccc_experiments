@@ -106,5 +106,5 @@ jobs:
         VIASH_TEMP=$RUNNER_TEMP/viash viash test \
           "${{ matrix.component.config }}" \
           --cpus 2 \
-          --memory "10gb"
+          --memory "16gb"
 
