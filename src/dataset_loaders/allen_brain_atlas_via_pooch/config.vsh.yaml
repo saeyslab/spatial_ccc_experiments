@@ -9,8 +9,8 @@ functionality:
       __merge__: ../../api/file_input.yaml
     - name: --brain_section_label
       type: string
-      description: Brain section label
-      example: 'Zhuang-ABCA-1.080'
+      description: A brain section label to subset the data with.
+      default: 'Zhuang-ABCA-1.080'
   resources:
     - type: python_script
       path: script.py
