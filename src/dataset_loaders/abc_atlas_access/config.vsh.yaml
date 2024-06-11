@@ -5,10 +5,10 @@ functionality:
       type: string
       description: Dataset label
       example: 'WMB-10Xv3'
-    - name: --dataset_label
+    - name: --file_name
       type: string
-      description: Dataset label
-      example: 'WMB-10Xv3'
+      description: File name
+      example: 'WMB-10Xv3-CB/log2'
     - name: --output
       type: file
       description: Path to the output directory
@@ -23,3 +23,4 @@ platforms:
       - type: python
         packages:
           - git+https://github.com/alleninstitute/abc_atlas_access
+          - anndata
