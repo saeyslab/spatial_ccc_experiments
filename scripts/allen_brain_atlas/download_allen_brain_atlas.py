@@ -18,7 +18,7 @@ expression_matrix_raw = pooch.retrieve(
 # loading annotation with pooch
 print(f"Loading annotation to '{out_path}raw/'")
 cell_metadata = pooch.retrieve(
-    url="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/cell_metadata.csv",
+    url="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/cell_metadata_extended.csv",
     fname="cell_metadata_with_cluster_annotation.csv",
     path=f"{out_path}raw/",
     known_hash=None,
