@@ -5,6 +5,7 @@ functionality:
       type: file
       description: Path to the output directory
       example: output.h5ad
+      direction: output
     - name: --brain_section_label
       type: string
       description: Brain section label
@@ -21,3 +22,5 @@ platforms:
           - pooch
           - anndata
           - pandas
+          - scanpy
+  - type: nextflow

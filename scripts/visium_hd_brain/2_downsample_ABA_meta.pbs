@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=01:00:00
+#PBS -l mem=32gb
+#PBS -e logs/
+#PBS -o logs/
+
+module load R-bundle-Bioconductor/3.18-foss-2023a-R-4.3.2
+cd $PBS_O_WORKDIR
+Rscript --vanilla 2_downsample_ABA_meta.R

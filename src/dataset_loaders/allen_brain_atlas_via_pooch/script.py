@@ -2,6 +2,7 @@ import pooch
 import anndata as ad
 import pandas as pd
 import numpy as np
+import scanpy as sc
 
 ## VIASH START
 par = {
@@ -9,7 +10,7 @@ par = {
     "brain_section_label": "Zhuang-ABCA-1.080",
 }
 meta = {
-    "temp_dir": "/tmp"
+    "temp_dir": "cache"
 }
 ## VIASH END
 
@@ -27,7 +28,7 @@ expression_matrix_raw = pooch.retrieve(
 # loading annotation with pooch
 print(f"Loading annotation to '{cache_path}'")
 cell_metadata = pooch.retrieve(
-    url="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/cell_metadata.csv",
+    url="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/views/cell_metadata_with_cluster_annotation.csv",
     fname="cell_metadata_with_cluster_annotation.csv",
     path=cache_path,
     known_hash=None,
@@ -80,6 +81,21 @@ adata.obs["celltype"] = adata.obs["class"].astype("category")
 adata.obs["fov"] = adata.obs["brain_section_label"].astype("category")
 
 adata.obsm["spatial"] = np.array(adata.obs[["x", "y"]])
+
+# convert objects to category
+for obs_col in adata.obs.columns:
+    if adata.obs[obs_col].dtype == "object":
+        adata.obs[obs_col] = adata.obs[obs_col].astype("category")
+
+
+# move counts
+adata.layers["counts"] = adata.X.copy()
+adata.layers["normalized"] = adata.X.copy()
+del adata.X
+
+# compute log1p
+sc.pp.normalize_total(adata, target_sum=1e4, layer="normalized")
+sc.pp.log1p(adata, layer="normalized")
 
 print(f"Writing processed anndata object to '{par['output']}'")
 adata.write_h5ad(par["output"], compression="gzip")

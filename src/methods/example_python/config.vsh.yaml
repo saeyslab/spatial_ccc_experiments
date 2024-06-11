@@ -1,15 +1,15 @@
 functionality:
-  name: cellxgene
+  name: example_python
   arguments:
-    - name: --url
-      type: string
-      description: URL of the cellxgene dataset
-      example: 'https://datasets.cellxgene.cziscience.com/2ae703d3-e98f-4db0-8477-43b75f7c543c.h5ad'
+    - name: --input
+      type: file
+      description: Path to the input file
+      example: resources/datasets/Zhuang_2023_merfish_brain/dataset.h5ad
     - name: --output
       type: file
       description: Path to the output directory
-      example: output.h5ad
       direction: output
+      example: resources/results/example_python/prediction.h5ad
   resources:
     - type: python_script
       path: script.py
@@ -20,4 +20,5 @@ platforms:
       - type: python
         packages:
           - anndata
-          - urlretrieve
+          - pandas
+          # ... add more dependencies here ...

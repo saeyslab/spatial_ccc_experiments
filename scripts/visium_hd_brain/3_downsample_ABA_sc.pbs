@@ -1,0 +1,14 @@
+#!/bin/bash -l
+#PBS -l nodes=1:ppn=7
+#PBS -l walltime=01:00:00
+#PBS -e logs/
+#PBS -o logs/
+
+module load Single-cell-python-bundle/2024.0
+cd $PBS_O_WORKDIR
+python 3_downsample_ABA_sc.py ${PBS_ARRAYID}
+
+# TO SUBMIT:
+# cd to the directory of this script
+# module load worker/1.6.12-foss-2021b
+# wsub -t 1-13 -batch 3_downsample_ABA_sc.pbs
