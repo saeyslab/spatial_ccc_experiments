@@ -7,6 +7,10 @@ info:
         name: counts
         description: Raw counts.
         required: true
+      - type: double
+        name: normalized
+        description: Normalised expression values.
+        required: true
     obs:
       - type: string
         name: celltype
@@ -21,7 +25,7 @@ info:
       - type: string
         name: dataset_id
         description: A unique identifier for the dataset
-        required: true
+        required: false
       - name: dataset_reference
         type: string
         description: Reference of the dataset.
@@ -29,4 +33,4 @@ info:
       - name: dataset_summary
         type: string
         description: Description of the dataset.
-        required: fakse
+        required: false
