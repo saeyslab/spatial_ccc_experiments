@@ -48,10 +48,13 @@ platforms:
 - type: "docker"
   id: "docker"
   image: "python:3.10"
+  target_organization: "saeyslab/spatial_ccc_experiments"
+  target_registry: "ghcr.io"
   namespace_separator: "/"
   resolve_volume: "Automatic"
   chown: true
   setup_strategy: "ifneedbepullelsecachedbuild"
+  target_image_source: "https://github.com/saeyslab/spatial_ccc_experiments"
   setup:
   - type: "python"
     user: false
@@ -67,5 +70,5 @@ info:
   output: "target/docker/abc_atlas_access"
   executable: "target/docker/abc_atlas_access/abc_atlas_access"
   viash_version: "0.8.6"
-  git_commit: "2fbc48a51cc34281a6f148cce4c280ee9b9495df"
+  git_commit: "d9108a8d0902f4644b5972d75c1633c69755c41e"
   git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"

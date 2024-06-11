@@ -2828,10 +2828,13 @@ meta = [
       "type" : "docker",
       "id" : "docker",
       "image" : "python:3.10",
+      "target_organization" : "saeyslab/spatial_ccc_experiments",
+      "target_registry" : "ghcr.io",
       "namespace_separator" : "/",
       "resolve_volume" : "Automatic",
       "chown" : true,
       "setup_strategy" : "ifneedbepullelsecachedbuild",
+      "target_image_source" : "https://github.com/saeyslab/spatial_ccc_experiments",
       "setup" : [
         {
           "type" : "python",
@@ -2860,37 +2863,20 @@ meta = [
       },
       "config" : {
         "labels" : {
-          "mem1gb" : "memory = 1.GB",
-          "mem2gb" : "memory = 2.GB",
-          "mem4gb" : "memory = 4.GB",
-          "mem8gb" : "memory = 8.GB",
-          "mem16gb" : "memory = 16.GB",
-          "mem32gb" : "memory = 32.GB",
-          "mem64gb" : "memory = 64.GB",
-          "mem128gb" : "memory = 128.GB",
-          "mem256gb" : "memory = 256.GB",
-          "mem512gb" : "memory = 512.GB",
-          "mem1tb" : "memory = 1.TB",
-          "mem2tb" : "memory = 2.TB",
-          "mem4tb" : "memory = 4.TB",
-          "mem8tb" : "memory = 8.TB",
-          "mem16tb" : "memory = 16.TB",
-          "mem32tb" : "memory = 32.TB",
-          "mem64tb" : "memory = 64.TB",
-          "mem128tb" : "memory = 128.TB",
-          "mem256tb" : "memory = 256.TB",
-          "mem512tb" : "memory = 512.TB",
-          "cpu1" : "cpus = 1",
-          "cpu2" : "cpus = 2",
-          "cpu5" : "cpus = 5",
-          "cpu10" : "cpus = 10",
-          "cpu20" : "cpus = 20",
-          "cpu50" : "cpus = 50",
-          "cpu100" : "cpus = 100",
-          "cpu200" : "cpus = 200",
-          "cpu500" : "cpus = 500",
-          "cpu1000" : "cpus = 1000"
-        }
+          "lowmem" : "memory = 20.Gb",
+          "midmem" : "memory = 50.Gb",
+          "highmem" : "memory = 100.Gb",
+          "lowcpu" : "cpus = 5",
+          "midcpu" : "cpus = 15",
+          "highcpu" : "cpus = 30",
+          "lowtime" : "time = 1.h",
+          "midtime" : "time = 4.h",
+          "hightime" : "time = 8.h",
+          "veryhightime" : "time = 24.h"
+        },
+        "script" : [
+          "process.errorStrategy = 'ignore'"
+        ]
       },
       "debug" : false,
       "container" : "docker"
@@ -2901,7 +2887,7 @@ meta = [
     "platform" : "nextflow",
     "output" : "target/nextflow/allen_brain_atlas_via_pooch",
     "viash_version" : "0.8.6",
-    "git_commit" : "2fbc48a51cc34281a6f148cce4c280ee9b9495df",
+    "git_commit" : "d9108a8d0902f4644b5972d75c1633c69755c41e",
     "git_remote" : "https://github.com/saeyslab/spatial_ccc_experiments"
   }
 }'''))
@@ -3384,7 +3370,8 @@ meta["defaults"] = [
   // default directives
   directives: readJsonBlob('''{
   "container" : {
-    "image" : "allen_brain_atlas_via_pooch",
+    "registry" : "ghcr.io",
+    "image" : "saeyslab/spatial_ccc_experiments/allen_brain_atlas_via_pooch",
     "tag" : "build-main"
   },
   "tag" : "$id"
