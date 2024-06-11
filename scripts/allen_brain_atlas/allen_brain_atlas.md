@@ -16,6 +16,6 @@ pip install pooch
 
 # Preprocessing data
 
-`python3 preprocess_allen_brain_atlas.py /path/to/save/ [SECTION_NR]`
+`python3 preprocess_allen_brain_atlas.py /path/to/save/`
 
 - `SECTION_NR`: For subsetting of slice section (Optional)
