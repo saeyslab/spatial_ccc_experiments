@@ -1,0 +1,3 @@
+[submodule "common-resources"]
+	path = common-resources
+	url = https://github.com/openproblems-bio/common-resources.git

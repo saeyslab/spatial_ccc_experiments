@@ -1,0 +1,105 @@
+functionality:
+  name: "allen_brain_atlas_via_pooch"
+  version: "build-main"
+  arguments:
+  - type: "file"
+    name: "--output"
+    description: "Path to the output directory"
+    info: null
+    example:
+    - "output.h5ad"
+    must_exist: true
+    create_parent: true
+    required: false
+    direction: "output"
+    multiple: false
+    multiple_sep: ":"
+    dest: "par"
+  - type: "string"
+    name: "--brain_section_label"
+    description: "Brain section label"
+    info: null
+    example:
+    - "Zhuang-ABCA-1.080"
+    required: false
+    direction: "input"
+    multiple: false
+    multiple_sep: ":"
+    dest: "par"
+  resources:
+  - type: "python_script"
+    path: "script.py"
+    is_executable: true
+  info: null
+  status: "enabled"
+  set_wd_to_resources_dir: false
+platforms:
+- type: "docker"
+  id: "docker"
+  image: "python:3.10"
+  namespace_separator: "/"
+  resolve_volume: "Automatic"
+  chown: true
+  setup_strategy: "ifneedbepullelsecachedbuild"
+  setup:
+  - type: "python"
+    user: false
+    packages:
+    - "pooch"
+    - "anndata"
+    - "pandas"
+    - "scanpy"
+    upgrade: true
+  entrypoint: []
+  cmd: null
+- type: "nextflow"
+  id: "nextflow"
+  directives:
+    tag: "$id"
+  auto:
+    simplifyInput: true
+    simplifyOutput: false
+    transcript: false
+    publish: false
+  config:
+    labels:
+      mem1gb: "memory = 1.GB"
+      mem2gb: "memory = 2.GB"
+      mem4gb: "memory = 4.GB"
+      mem8gb: "memory = 8.GB"
+      mem16gb: "memory = 16.GB"
+      mem32gb: "memory = 32.GB"
+      mem64gb: "memory = 64.GB"
+      mem128gb: "memory = 128.GB"
+      mem256gb: "memory = 256.GB"
+      mem512gb: "memory = 512.GB"
+      mem1tb: "memory = 1.TB"
+      mem2tb: "memory = 2.TB"
+      mem4tb: "memory = 4.TB"
+      mem8tb: "memory = 8.TB"
+      mem16tb: "memory = 16.TB"
+      mem32tb: "memory = 32.TB"
+      mem64tb: "memory = 64.TB"
+      mem128tb: "memory = 128.TB"
+      mem256tb: "memory = 256.TB"
+      mem512tb: "memory = 512.TB"
+      cpu1: "cpus = 1"
+      cpu2: "cpus = 2"
+      cpu5: "cpus = 5"
+      cpu10: "cpus = 10"
+      cpu20: "cpus = 20"
+      cpu50: "cpus = 50"
+      cpu100: "cpus = 100"
+      cpu200: "cpus = 200"
+      cpu500: "cpus = 500"
+      cpu1000: "cpus = 1000"
+  debug: false
+  container: "docker"
+info:
+  config: "/home/runner/work/spatial_ccc_experiments/spatial_ccc_experiments/src/dataset_loaders/allen_brain_atlas_via_pooch/config.vsh.yaml"
+  platform: "nextflow"
+  output: "target/nextflow/allen_brain_atlas_via_pooch"
+  executable: "target/nextflow/allen_brain_atlas_via_pooch/allen_brain_atlas_via_pooch"
+  viash_version: "0.8.6"
+  git_commit: "2fbc48a51cc34281a6f148cce4c280ee9b9495df"
+  git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"
