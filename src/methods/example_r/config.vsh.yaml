@@ -11,7 +11,7 @@ functionality:
       direction: output
       example: resources/results/example_python/prediction.h5ad
   resources:
-    - type: R_script
+    - type: r_script
       path: script.R
 platforms:
   - type: docker

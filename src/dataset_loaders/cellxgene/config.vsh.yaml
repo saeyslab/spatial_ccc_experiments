@@ -4,7 +4,7 @@ functionality:
     - name: --url
       type: string
       description: URL of the cellxgene dataset
-      example: 'https://datasets.cellxgene.cziscience.com/2ae703d3-e98f-4db0-8477-43b75f7c543c.h5ad'
+      default: 'https://datasets.cellxgene.cziscience.com/2ae703d3-e98f-4db0-8477-43b75f7c543c.h5ad'
     - name: --output
       type: file
       description: Path to the output directory
@@ -13,6 +13,9 @@ functionality:
   resources:
     - type: python_script
       path: script.py
+  test_resources:
+    - type: python_script
+      path: /common-resources/component_tests/run_and_check_output.py
 platforms:
   - type: docker
     image: python:3.10
@@ -20,4 +23,5 @@ platforms:
       - type: python
         packages:
           - anndata
-          - urlretrieve
+          - pyyaml
+          - scanpy
