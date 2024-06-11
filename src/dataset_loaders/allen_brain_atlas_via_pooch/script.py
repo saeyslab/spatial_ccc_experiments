@@ -9,7 +9,7 @@ par = {
     "brain_section_label": "Zhuang-ABCA-1.080",
 }
 meta = {
-    "temp_dir": "/tmp"
+    "temp_dir": "cache"
 }
 ## VIASH END
 
@@ -27,7 +27,7 @@ expression_matrix_raw = pooch.retrieve(
 # loading annotation with pooch
 print(f"Loading annotation to '{cache_path}'")
 cell_metadata = pooch.retrieve(
-    url="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/cell_metadata.csv",
+    url="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/views/cell_metadata_with_cluster_annotation.csv",
     fname="cell_metadata_with_cluster_annotation.csv",
     path=cache_path,
     known_hash=None,
