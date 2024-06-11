@@ -1,0 +1,26 @@
+functionality:
+  name: abc_atlas_access
+  arguments:
+    - name: --dataset_label
+      type: string
+      description: Dataset label
+      example: 'WMB-10Xv3'
+    - name: --file_name
+      type: string
+      description: File name
+      example: 'WMB-10Xv3-CB/log2'
+    - name: --output
+      type: file
+      description: Path to the output directory
+      example: output.h5ad
+  resources:
+    - type: python_script
+      path: script.py
+platforms:
+  - type: docker
+    image: python:3.10
+    setup:
+      - type: python
+        packages:
+          - git+https://github.com/alleninstitute/abc_atlas_access
+          - anndata

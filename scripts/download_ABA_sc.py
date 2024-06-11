@@ -11,7 +11,7 @@ if len(sys.argv) != 2:
 task_id = int(sys.argv[1])
 
 # Combine VSC_DATA_VO_USER and "ABA_data" to get the download base
-download_base = os.environ['VSC_DATA_VO_USER'] + '/ABA_data'
+download_base = 'resources/ABA_data'
 abc_cache = AbcProjectCache.from_s3_cache(download_base)
 
 data_files = abc_cache.list_data_files('WMB-10Xv3')
