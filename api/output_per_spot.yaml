@@ -1,0 +1,28 @@
+type: file
+info:
+  summary: "The output data format for method that output per spot prediction scores (e.g., SpatialDM, LIANA+, NICHES)."
+  slots:
+    layers: 
+      - type: integer
+        name: interactions
+        description: N x N matrix, where N are the observations (i.e., cells/spots).
+        required: true
+    obs:
+      - type: string
+        name: celltype
+        description: Cell type labels.
+        required: true
+    obsm:
+      - type: double
+        name: ccc_pred_local_scores
+        description: Per spot prediction scores. Observations (N) x interactions (I) matrix.
+        required: true
+    uns:
+      - type: string
+        name: dataset_id
+        description: A unique identifier for the dataset.
+        required: true
+      - type: method_id
+        description: A unique identifier for the method.
+        required: true
+      

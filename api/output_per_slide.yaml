@@ -1,0 +1,27 @@
+type: file
+info:
+  summary: "The output data format for methods that output a summary of interactions for the whole slide/sample (e.g., COMMOT, MISTy, LIANA+)."
+  slots:
+    layers: 
+      - type: double
+        name: normalized
+        description: Gene/protein expression matrix.
+        required: true
+    obs:
+      - type: string
+        name: celltype
+        description: Cell type labels.
+        required: true
+    uns:
+      - type: string
+        name: dataset_id
+        description: A unique identifier for the dataset.
+        required: true
+      - type: method_id
+        description: A unique identifier for the method.
+        required: true
+      - type: object
+        name: ccc_pred
+        description: | 
+          Predicted interactions. This is a dataframe containing the following columns {'source_ct', 'receiver_ct', 'ligand', 'receptor'}. 
+        required: true

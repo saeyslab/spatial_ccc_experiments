@@ -1,0 +1,24 @@
+type: file
+info:
+  summary: "The output data format for methods that output a summary for the whole slide but with respect to cell type annotations (e.g. Giotto, CellChatv2)."
+  slots:
+    layers: 
+      - type: double
+        name: normalized
+        description: Gene/protein expression matrix.
+        required: true
+    obs:
+      - type: string
+        name: celltype
+        description: Cell type labels.
+        required: true
+    uns:
+      - type: string
+        name: dataset_id
+        description: A unique identifier for the dataset.
+        required: true
+      - type: object
+        name: ccc_pred
+        description: | 
+          Predicted interactions. This is a dataframe containing the following columns {'ligand', 'receptor'}.
+        required: true
