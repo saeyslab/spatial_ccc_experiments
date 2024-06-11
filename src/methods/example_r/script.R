@@ -9,11 +9,11 @@ adata <- anndata::read_h5ad(par$input)
 
 # generate prediction
 ccc_pred <- data.frame(
-  ...
+  
 )
 
 # create output
-output <- ad.AnnData(
+output <- anndata::AnnData(
   shape = c(0L, 0L),
   uns = list(
     ccc_pred = ccc_pred
