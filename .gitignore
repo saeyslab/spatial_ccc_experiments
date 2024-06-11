@@ -1,1 +1,10 @@
 resources
+work
+.nextflow*
+target
+.idea
+.vscode
+.DS_Store
+output
+trace-*
+.ipynb_checkpoints
