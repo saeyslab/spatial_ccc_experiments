@@ -6,6 +6,7 @@ functionality:
       description: Path to the output directory
       example: output.h5ad
       direction: output
+      __merge__: ../../api/file_input.yaml
     - name: --brain_section_label
       type: string
       description: Brain section label
@@ -13,6 +14,9 @@ functionality:
   resources:
     - type: python_script
       path: script.py
+  test_resources:
+    - type: python_script
+      path: /common-resources/component_tests/run_and_check_output.py
 platforms:
   - type: docker
     image: python:3.10
@@ -23,4 +27,5 @@ platforms:
           - anndata
           - pandas
           - scanpy
+          - pyyaml
   - type: nextflow
