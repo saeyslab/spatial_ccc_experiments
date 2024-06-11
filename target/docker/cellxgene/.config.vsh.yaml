@@ -6,7 +6,7 @@ functionality:
     name: "--url"
     description: "URL of the cellxgene dataset"
     info: null
-    example:
+    default:
     - "https://datasets.cellxgene.cziscience.com/2ae703d3-e98f-4db0-8477-43b75f7c543c.h5ad"
     required: false
     direction: "input"
@@ -30,6 +30,10 @@ functionality:
   - type: "python_script"
     path: "script.py"
     is_executable: true
+  test_resources:
+  - type: "python_script"
+    path: "common-resources/component_tests/run_and_check_output.py"
+    is_executable: true
   info: null
   status: "enabled"
   set_wd_to_resources_dir: false
@@ -49,6 +53,7 @@ platforms:
     user: false
     packages:
     - "anndata"
+    - "pyyaml"
     upgrade: true
   entrypoint: []
   cmd: null
@@ -58,5 +63,5 @@ info:
   output: "target/docker/cellxgene"
   executable: "target/docker/cellxgene/cellxgene"
   viash_version: "0.8.6"
-  git_commit: "57df20b61407666ecc453106abffe23611f5759b"
+  git_commit: "bb94fbc140c90859791bedab818b14e1fd799929"
   git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"

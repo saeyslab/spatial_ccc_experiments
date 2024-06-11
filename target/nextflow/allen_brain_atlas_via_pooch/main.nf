@@ -2887,7 +2887,7 @@ meta = [
     "platform" : "nextflow",
     "output" : "target/nextflow/allen_brain_atlas_via_pooch",
     "viash_version" : "0.8.6",
-    "git_commit" : "57df20b61407666ecc453106abffe23611f5759b",
+    "git_commit" : "bb94fbc140c90859791bedab818b14e1fd799929",
     "git_remote" : "https://github.com/saeyslab/spatial_ccc_experiments"
   }
 }'''))
