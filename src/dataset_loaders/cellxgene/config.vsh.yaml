@@ -20,4 +20,3 @@ platforms:
       - type: python
         packages:
           - anndata
-          - urlretrieve
