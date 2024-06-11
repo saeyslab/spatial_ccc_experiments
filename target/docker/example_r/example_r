@@ -408,9 +408,9 @@ RUN Rscript -e 'if (!requireNamespace("remotes", quietly = TRUE)) install.packag
   Rscript -e 'remotes::install_cran(c("anndata"), repos = "https://cran.rstudio.com")'
 
 LABEL org.opencontainers.image.description="Companion container for running component example_r"
-LABEL org.opencontainers.image.created="2024-06-11T11:33:11Z"
+LABEL org.opencontainers.image.created="2024-06-11T12:54:40Z"
 LABEL org.opencontainers.image.source="https://github.com/saeyslab/spatial_ccc_experiments"
-LABEL org.opencontainers.image.revision="9cec3356237f564cfba584b4d3e844f43f32f2fc"
+LABEL org.opencontainers.image.revision="f2ff54b4d02df347cdd00016f7b323966050760b"
 LABEL org.opencontainers.image.version="build-main"
 
 VIASHDOCKER
