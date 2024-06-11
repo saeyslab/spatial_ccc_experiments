@@ -87,7 +87,9 @@ jobs:
     - uses: data-intuitive/reclaim-the-bytes@v2
     
     - uses: actions/checkout@v4
-
+      with:
+        submodules: 'recursive'
+        
     - uses: viash-io/viash-actions/setup@v5
 
     # use cache
