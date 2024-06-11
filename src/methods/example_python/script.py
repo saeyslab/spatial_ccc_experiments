@@ -17,6 +17,7 @@ ccc_pred = pd.DataFrame(
 
 # create output
 output = ad.AnnData(
+  shape=(0, 0),
   uns={
     "ccc_pred": ccc_pred
   }
