@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=04:00:00
+#PBS -l mem=64gb
+#PBS -e logs/
+#PBS -o logs/
+
+module load Single-cell-python-bundle/2024.02-foss-2023a
+cd $PBS_O_WORKDIR
+python 4_prepare_sc_and_st.py
