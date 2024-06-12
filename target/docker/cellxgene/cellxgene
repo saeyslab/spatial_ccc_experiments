@@ -409,9 +409,9 @@ RUN pip install --upgrade pip && \
   pip install --upgrade --no-cache-dir "anndata" "pyyaml" "scanpy"
 
 LABEL org.opencontainers.image.description="Companion container for running component cellxgene"
-LABEL org.opencontainers.image.created="2024-06-12T08:39:23Z"
+LABEL org.opencontainers.image.created="2024-06-12T13:38:49Z"
 LABEL org.opencontainers.image.source="https://github.com/saeyslab/spatial_ccc_experiments"
-LABEL org.opencontainers.image.revision="7a2e6f6839d4e87fe3b50d9aca0a8f4b2f2e4aeb"
+LABEL org.opencontainers.image.revision="c5a010c60714cfc9993270423745a147cd3b7a13"
 LABEL org.opencontainers.image.version="build-main"
 
 VIASHDOCKER

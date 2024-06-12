@@ -2917,7 +2917,7 @@ meta = [
     "platform" : "nextflow",
     "output" : "target/nextflow/common/sync_resources",
     "viash_version" : "0.8.6",
-    "git_commit" : "7a2e6f6839d4e87fe3b50d9aca0a8f4b2f2e4aeb",
+    "git_commit" : "c5a010c60714cfc9993270423745a147cd3b7a13",
     "git_remote" : "https://github.com/saeyslab/spatial_ccc_experiments"
   }
 }'''))
