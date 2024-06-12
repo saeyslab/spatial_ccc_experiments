@@ -1,9 +1,11 @@
+import os
 import anndata as ad
 import pandas as pd
 import numpy as np
 import scanpy as sc
 import boto3
-import os
+from botocore.config import Config
+from botocore import UNSIGNED
 
 ## VIASH START
 par = {
@@ -21,7 +23,7 @@ cache_path = meta["temp_dir"] + "/Zhuang_2023_merfish_brain"
 import os
 os.makedirs(cache_path, exist_ok=True)
 
-s3 = boto3.client("s3")
+s3 = boto3.client('s3', config=Config(signature_version=UNSIGNED))
 
 # loading raw expression matrix via s3
 expression_matrix_raw = f"{cache_path}/Zhuang-ABCA-1-raw.h5ad"
