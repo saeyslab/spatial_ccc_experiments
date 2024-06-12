@@ -5,7 +5,7 @@ import numpy as np
 
 ## VIASH START
 par = {
-    "output": "resources/datasets/Zhuang_2023_merfish_brain/dataset.h5ad",
+    "output": "/lustre/groups/ml01/datasets/2024_spatial_ccc_experiments_francesca.drummer/allen_brain_data/Zhuang23.h5ad",
     "brain_section_label": "Zhuang-ABCA-1.080",
 }
 meta = {

@@ -12,7 +12,7 @@ out_path = sys.argv[1]
 
 print("Processing raw data")
 adata = sc.read_h5ad(f"{path}raw/Zhuang-ABCA-1-raw.h5ad")
-df_cell = pd.read_csv(f"{path}raw/cell_metadata.csv", index_col=0)
+df_cell = pd.read_csv(f"{path}raw/cell_metadata_with_cluster_annotation.csv", index_col=0)
 df_gene = pd.read_csv(f"{path}raw/gene_metadata.csv", index_col=0)
 
 adata.var = df_gene

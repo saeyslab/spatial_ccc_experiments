@@ -1,0 +1,6 @@
+Set log1p data...
+Get LR database...
+Traceback (most recent call last):
+  File "/home/icb/francesca.drummer/1-Projects/spatial_ccc_experiments/src/methods/commot/commot_script.py", line 23, in <module>
+    print(f"Nr. of LR pairs {df_cellchat_filtered.shape()}...")
+TypeError: 'tuple' object is not callable

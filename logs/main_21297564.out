@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/icb/francesca.drummer/1-Projects/spatial_ccc_experiments/src/methods/commot/commot_script.py", line 3, in <module>
+    import commot as ct
+ModuleNotFoundError: No module named 'commot'

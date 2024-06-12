@@ -8,7 +8,7 @@ functionality:
     - name: --brain_section_label
       type: string
       description: Brain section label
-      example: 'Zhuang-ABCA-1.080'
+      default: 'Zhuang-ABCA-1.080'
   resources:
     - type: python_script
       path: script.py
