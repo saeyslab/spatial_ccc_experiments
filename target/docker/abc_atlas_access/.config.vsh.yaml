@@ -70,5 +70,5 @@ info:
   output: "target/docker/abc_atlas_access"
   executable: "target/docker/abc_atlas_access/abc_atlas_access"
   viash_version: "0.8.6"
-  git_commit: "c5a010c60714cfc9993270423745a147cd3b7a13"
+  git_commit: "3b235f248c88b1b015bc99a4e742d2dd588472bd"
   git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"
