@@ -408,9 +408,9 @@ RUN pip install --upgrade pip && \
   pip install --upgrade --no-cache-dir "boto3" "anndata" "pandas" "scanpy" "pyyaml"
 
 LABEL org.opencontainers.image.description="Companion container for running component allen_brain_atlas_via_s3"
-LABEL org.opencontainers.image.created="2024-06-12T13:53:35Z"
+LABEL org.opencontainers.image.created="2024-06-12T14:41:32Z"
 LABEL org.opencontainers.image.source="https://github.com/saeyslab/spatial_ccc_experiments"
-LABEL org.opencontainers.image.revision="7fc30fdc1ded90bebbbabe744a75f5f49e258d63"
+LABEL org.opencontainers.image.revision="d31d0883b51d4b8c73d8f16f4f3b2b4ad95fbbb9"
 LABEL org.opencontainers.image.version="build-main"
 
 VIASHDOCKER

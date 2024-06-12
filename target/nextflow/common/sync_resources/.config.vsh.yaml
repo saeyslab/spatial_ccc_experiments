@@ -115,5 +115,5 @@ info:
   output: "target/nextflow/common/sync_resources"
   executable: "target/nextflow/common/sync_resources/sync_resources"
   viash_version: "0.8.6"
-  git_commit: "7fc30fdc1ded90bebbbabe744a75f5f49e258d63"
+  git_commit: "d31d0883b51d4b8c73d8f16f4f3b2b4ad95fbbb9"
   git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"
