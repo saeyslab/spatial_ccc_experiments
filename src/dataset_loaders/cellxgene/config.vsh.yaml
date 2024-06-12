@@ -10,6 +10,7 @@ functionality:
       description: Path to the output directory
       example: output.h5ad
       direction: output
+      __merge__: ../../api/file_input.yaml
   resources:
     - type: python_script
       path: script.py

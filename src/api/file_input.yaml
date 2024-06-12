@@ -1,0 +1,36 @@
+type: file
+info:
+  summary: "The input data format."
+  slots:
+    layers: 
+      - type: integer
+        name: counts
+        description: Raw counts.
+        required: true
+      - type: double
+        name: normalized
+        description: Normalised expression values.
+        required: true
+    obs:
+      - type: string
+        name: celltype
+        description: Cell type labels.
+        required: true
+    obsm:
+      - type: double
+        name: spatial
+        description: X and Y coordinates of cells/spots.
+        required: true
+    uns:
+      - type: string
+        name: dataset_id
+        description: A unique identifier for the dataset
+        required: false
+      - name: dataset_reference
+        type: string
+        description: Reference of the dataset.
+        required: false
+      - name: dataset_summary
+        type: string
+        description: Description of the dataset.
+        required: false
