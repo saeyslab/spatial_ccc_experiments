@@ -427,9 +427,9 @@ ENTRYPOINT []
  
 RUN :
 LABEL org.opencontainers.image.description="Companion container for running component common sync_resources"
-LABEL org.opencontainers.image.created="2024-06-12T14:41:32Z"
+LABEL org.opencontainers.image.created="2024-06-12T14:42:33Z"
 LABEL org.opencontainers.image.source="https://github.com/saeyslab/spatial_ccc_experiments"
-LABEL org.opencontainers.image.revision="d31d0883b51d4b8c73d8f16f4f3b2b4ad95fbbb9"
+LABEL org.opencontainers.image.revision="f45f00620b20872ff83bdd85b9b9dc715edbe81c"
 LABEL org.opencontainers.image.version="build-main"
 
 VIASHDOCKER
