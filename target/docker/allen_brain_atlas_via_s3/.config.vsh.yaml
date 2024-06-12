@@ -1,11 +1,45 @@
 functionality:
-  name: "allen_brain_atlas_via_pooch"
+  name: "allen_brain_atlas_via_s3"
   version: "build-main"
   arguments:
   - type: "file"
     name: "--output"
     description: "Path to the output directory"
-    info: null
+    info:
+      summary: "The input data format."
+      slots:
+        layers:
+        - type: "integer"
+          name: "counts"
+          description: "Raw counts."
+          required: true
+        - type: "double"
+          name: "normalized"
+          description: "Normalised expression values."
+          required: true
+        obs:
+        - type: "string"
+          name: "celltype"
+          description: "Cell type labels."
+          required: true
+        obsm:
+        - type: "double"
+          name: "spatial"
+          description: "X and Y coordinates of cells/spots."
+          required: true
+        uns:
+        - type: "string"
+          name: "dataset_id"
+          description: "A unique identifier for the dataset"
+          required: false
+        - name: "dataset_reference"
+          type: "string"
+          description: "Reference of the dataset."
+          required: false
+        - name: "dataset_summary"
+          type: "string"
+          description: "Description of the dataset."
+          required: false
     example:
     - "output.h5ad"
     must_exist: true
@@ -17,9 +51,9 @@ functionality:
     dest: "par"
   - type: "string"
     name: "--brain_section_label"
-    description: "Brain section label"
+    description: "A brain section label to subset the data with."
     info: null
-    example:
+    default:
     - "Zhuang-ABCA-1.080"
     required: false
     direction: "input"
@@ -48,10 +82,11 @@ platforms:
   - type: "python"
     user: false
     packages:
-    - "pooch"
+    - "boto3"
     - "anndata"
     - "pandas"
     - "scanpy"
+    - "pyyaml"
     upgrade: true
   entrypoint: []
   cmd: null
@@ -81,10 +116,10 @@ platforms:
   debug: false
   container: "docker"
 info:
-  config: "/home/runner/work/spatial_ccc_experiments/spatial_ccc_experiments/src/dataset_loaders/allen_brain_atlas_via_pooch/config.vsh.yaml"
-  platform: "nextflow"
-  output: "target/nextflow/allen_brain_atlas_via_pooch"
-  executable: "target/nextflow/allen_brain_atlas_via_pooch/allen_brain_atlas_via_pooch"
+  config: "/home/runner/work/spatial_ccc_experiments/spatial_ccc_experiments/src/dataset_loaders/allen_brain_atlas_via_s3/config.vsh.yaml"
+  platform: "docker"
+  output: "target/docker/allen_brain_atlas_via_s3"
+  executable: "target/docker/allen_brain_atlas_via_s3/allen_brain_atlas_via_s3"
   viash_version: "0.8.6"
-  git_commit: "f2ff54b4d02df347cdd00016f7b323966050760b"
+  git_commit: "7a2e6f6839d4e87fe3b50d9aca0a8f4b2f2e4aeb"
   git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"
