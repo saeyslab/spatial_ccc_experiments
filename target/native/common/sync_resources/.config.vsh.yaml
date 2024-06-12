@@ -115,5 +115,5 @@ info:
   output: "target/native/common/sync_resources"
   executable: "target/native/common/sync_resources/sync_resources"
   viash_version: "0.8.6"
-  git_commit: "f45f00620b20872ff83bdd85b9b9dc715edbe81c"
+  git_commit: "59e9cd338c12701ad0d8f8d1a9db8188330126e2"
   git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"
