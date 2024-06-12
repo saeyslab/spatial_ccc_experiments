@@ -115,5 +115,5 @@ info:
   output: "target/docker/common/sync_resources"
   executable: "target/docker/common/sync_resources/sync_resources"
   viash_version: "0.8.6"
-  git_commit: "3b235f248c88b1b015bc99a4e742d2dd588472bd"
+  git_commit: "7fc30fdc1ded90bebbbabe744a75f5f49e258d63"
   git_remote: "https://github.com/saeyslab/spatial_ccc_experiments"

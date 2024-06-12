@@ -413,9 +413,9 @@ RUN pip install --upgrade pip && \
   pip install --upgrade --no-cache-dir "git+https://github.com/alleninstitute/abc_atlas_access" "anndata"
 
 LABEL org.opencontainers.image.description="Companion container for running component abc_atlas_access"
-LABEL org.opencontainers.image.created="2024-06-12T13:40:48Z"
+LABEL org.opencontainers.image.created="2024-06-12T13:53:35Z"
 LABEL org.opencontainers.image.source="https://github.com/saeyslab/spatial_ccc_experiments"
-LABEL org.opencontainers.image.revision="3b235f248c88b1b015bc99a4e742d2dd588472bd"
+LABEL org.opencontainers.image.revision="7fc30fdc1ded90bebbbabe744a75f5f49e258d63"
 LABEL org.opencontainers.image.version="build-main"
 
 VIASHDOCKER
