@@ -7,9 +7,10 @@ functionality:
       example: resources/datasets/Zhuang_2023_merfish_brain/dataset.h5ad
     - name: --output
       type: file
-      description: Path to the output directory
+      description: Path to the output file
       direction: output
-      example: resources/results/example_python/prediction.h5ad
+      example: resources/results/Zhuang_2023_merfish_brain/prediction.h5ad
+    # TODO: Add more useful arguments
   resources:
     - type: r_script
       path: script.R
@@ -18,5 +19,10 @@ platforms:
     image: ghcr.io/openproblems-bio/base_r:1.0.4
     setup:
       - type: r
-        packages:
+        cran:
           - anndata
+          - NMF
+        github: 
+          - jokergoo/circlize
+          - jokergoo/ComplexHeatmap
+          - jinworks/CellChat
